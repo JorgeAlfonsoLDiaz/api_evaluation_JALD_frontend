@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar | Contactos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="center-content">
+        <div class="center-1">
+            <h1>Editar Contacto</h1> <br>
+        </div>
+
+        <div class="center-1">
+            <form id="editarForm" action="editar.php" method="GET">
+                <div class="center-1">
+                    <label for="email">Email  </label><input type="text" id="email" name="email">
+                </div>
+                <div class="center-1">
+                    <label for="nombre">Nombre  </label><input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="center-1">
+                    <label for="telefono">Teléfono  </label><input type="text" id="telefono" name="telefono">
+                </div>
+                <div class="center-1">
+                    <button type="button" id="Actualizar">Actualizar</button>
+                    <button type="button" id="Cancelar">Regresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
