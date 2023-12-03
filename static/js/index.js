@@ -1,60 +1,24 @@
-function getContacts() {
-    var request = new XMLHttpRequest();
-    request.open('GET', "https://contacts-backend-5491847c74b7.herokuapp.com/contactos");
-    request.send();    
+const API_URL = "https://git.heroku.com/contactos-api-backend-heroku.git";
 
-    request.onload = (e) => {
-        const response = request.responseText;
-        const json = JSON.parse(response);
+const xhr = new XMLHttpRequest();
 
-        const tbody_contactos = document.getElementById("tbody_contactos");
-        tbody_contactos.innerHTML = '';
 
-        for (let i = 0; i < json.length; i++) {
-            var tr = document.createElement("tr");
-            var td_email = document.createElement("td");
-            var td_nombre = document.createElement("td");
-            var td_telefono = document.createElement("td");
-            var td_opciones = document.createElement("td");
-        
-            td_email.innerHTML = json[i]["email"];
-            td_nombre.innerHTML = json[i]["nombre"];
-            td_telefono.innerHTML = json[i]["telefono"];
-        
-            var btnVer = document.createElement('button');
-            btnVer.classList = 'btn btn-outline-info';
-            btnVer.textContent = 'Ver';
-            btnVer.addEventListener('click', function () {
-                window.location.href = 'details?email=' + json[i]["email"];
-            });
-        
-            var btnEditar = document.createElement('button');
-            btnEditar.classList = 'btn btn-outline-success';
-            btnEditar.textContent = 'Editar';
-            btnEditar.addEventListener('click', function () {
-                window.location.href = 'update?email=' + json[i]["email"];
-            });
-        
-            var btnEliminar = document.createElement('button');
-            btnEliminar.classList = 'btn btn-outline-danger';
-            btnEliminar.textContent = 'Eliminar';
-            btnEliminar.addEventListener('click', function () {
-                window.location.href = 'delete?email=' + json[i]["email"];
-            });
+function onRequestHandler() {
+    if (this.readyState == 4 && this.status == 200) {
+        // 0 = UNSET, no se ha llamado al método open
+        // 1 = OPENED, se ha llamado al método open
+        // 2 = HEADERS_RECEIVED, se está llamando al método send()
+        // 3 = LOADING, está cargando, es decir, está recibiendo la respuesta.
+        // 4 = DONE, se ha completado la operación.
 
-            btnVer.style.marginRight = '8px';
-            btnEditar.style.marginRight = '8px';
-        
-            td_opciones.appendChild(btnVer);
-            td_opciones.appendChild(btnEditar);
-            td_opciones.appendChild(btnEliminar);
-        
-            tr.appendChild(td_email);
-            tr.appendChild(td_nombre);
-            tr.appendChild(td_telefono);
-            tr.appendChild(td_opciones);
+        const data = JSON.parse(this.response);
+        const HTMLResponse = document.querySelector("#app");
 
-             tbody_contactos.appendChild(tr);
-        }
-    };
+        const tpl = data.map((user) => `<li>${user.name} ${user.email}</li>`);
+        HTMLResponse.innerHTML = `<ul>${tpl}</ul>`
+    }
 }
+
+xhr.addEventListener("load", onRequestHandler);
+xhr.open("GET", `${API_URL}/users`);
+xhr.send();
