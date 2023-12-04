@@ -19,7 +19,6 @@ function onRequestHandler() {
     }
 }
 
-
 xhr.addEventListener("load", onRequestHandler);
 xhr.open("GET", `${API_URL}`);
 xhr.send();
