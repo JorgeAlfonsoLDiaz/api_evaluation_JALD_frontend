@@ -12,13 +12,13 @@ function onRequestHandler() {
         // 4 = DONE, se ha completado la operación.
 
         const data = JSON.parse(this.response);
-        const HTMLResponse = document.querySelector("#app");
+        const HTMLResponse = document.querySelector("#datos");
 
-        const tpl = data.map((user) => `<li>${user.name} ${user.email}</li>`);
+        const tpl = data.map((user) => `<tr><td>${user.email}</td><td>${user.nombre}</td><td>${user.telefono}</td><td><a href="ver.html" class="opciones">ver</a></td><td><a href="editar.html" class="opciones">editar</a></td><td><a href="borrar.html" class="opciones">borrar</a></td></tr>`);
         HTMLResponse.innerHTML = `<ul>${tpl}</ul>`
     }
 }
 
 xhr.addEventListener("load", onRequestHandler);
-xhr.open("GET", `${API_URL}/users`);
+xhr.open("GET", `${API_URL}/`);
 xhr.send();
