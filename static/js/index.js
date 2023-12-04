@@ -15,7 +15,9 @@ function onRequestHandler() {
         const HTMLResponse = document.querySelector("#datos");
 
         const tpl = data.map((user) => `<tr><td>${user.email}</td><td>${user.nombre}</td><td>${user.telefono}</td><td><a href="ver.html" class="opciones">ver</a></td><td><a href="editar.html" class="opciones">editar</a></td><td><a href="borrar.html" class="opciones">borrar</a></td></tr>`);
-        HTMLResponse.innerHTML = tpl.join('');
+        // HTMLResponse.innerHTML = tpl.join(''); -- Asigna nuevo contenido en el elemento HTMLResponse
+
+        HTMLResponse.insertAdjacentHTML('beforeend', tpl.join(''));  // "Añade" nuevo contenido al elemento HTMLResponse
     }
 }
 
