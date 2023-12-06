@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             alert('El registro se insertó correctamente:\n' + JSON.stringify(data, null, 2));
+            window.location.href = '/';  // Lleva al usuario de vuelta al endpoint raíz (index)
         })
         .catch(error => {
             alert('Error al insertar el registro:\n' + error);
