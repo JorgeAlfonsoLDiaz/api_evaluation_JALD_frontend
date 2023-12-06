@@ -36,5 +36,5 @@ xhr.addEventListener("load", onRequestHandler);
 
 
 function cancelar() {
-    window.location.href = 'index';
+    window.location.href = 'index.html';
 }
