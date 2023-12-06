@@ -33,3 +33,8 @@ document.getElementById('buscarForm').addEventListener('submit', function (event
 });
 
 xhr.addEventListener("load", onRequestHandler);
+
+
+function cancelar() {
+    window.location.href = 'index';
+}
