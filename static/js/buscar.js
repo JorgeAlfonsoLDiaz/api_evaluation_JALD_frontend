@@ -18,8 +18,8 @@ function onRequestHandler() {
             console.log(this.response);
             
             const data_response = JSON.parse(this.response);
-            const data = Array.isArray(data_response) ? data : [data];
-            
+            const data = Array.isArray(data_response) ? data_response : [data_response];
+
             const HTMLResponse = document.getElementById("datos");
 
             const tpl = data.map((user) => `<tr><td>${user.email}</td><td>${user.nombre}</td><td>${user.telefono}</td><td><a href="ver.html" class="opciones">ver</a></td><td><a href="editar.html" class="opciones">editar</a></td><td><a href="borrar.html" class="opciones">borrar</a></td></tr>`);
