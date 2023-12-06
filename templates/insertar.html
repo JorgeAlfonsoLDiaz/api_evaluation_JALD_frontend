@@ -16,7 +16,7 @@
         </div>
 
         <div class="center-1">
-            <form id="insertarForm" action="insertar.php" method="GET">
+            <form id="insertarForm" action="/" method="POST">
                 <div class="center-1">
                     <label for="email">Email  </label><input type="text" id="email" name="email">
                 </div>
@@ -27,11 +27,14 @@
                     <label for="telefono">Teléfono  </label><input type="text" id="telefono" name="telefono">
                 </div>
                 <div class="center-1">
-                    <button type="button" id="Insertar">Insertar</button>
-                    <button type="button" id="Cancelar">Regresar</button>
+                    <button type="submit" id="Insertar">Insertar</button>
+                    <button type="button" id="Cancelar" onclick="cancelar()">Regresar</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script src="../static/js/insertar.js"></script>
+    <script src="../static/js/cancelar.js"></script>
 </body>
 </html>

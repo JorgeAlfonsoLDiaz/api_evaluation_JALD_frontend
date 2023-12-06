@@ -1,3 +1,3 @@
 function cancelar() {
-    window.location.href = '/';
+    window.location.href = '/';  // Lleva al usuario al endpoint raíz (index)
 }
