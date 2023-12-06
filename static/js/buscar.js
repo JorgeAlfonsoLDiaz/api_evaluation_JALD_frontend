@@ -22,7 +22,7 @@ function onRequestHandler() {
 
             const HTMLResponse = document.getElementById("datos");
 
-            const tpl = data.map((user) => `<tr><td>${user.email}</td><td>${user.nombre}</td><td>${user.telefono}</td><td><a href="ver.html" class="opciones">ver</a></td><td><a href="editar.html" class="opciones">editar</a></td><td><a href="borrar.html" class="opciones">borrar</a></td></tr>`);
+            const tpl = data.map((user) => `<tr><td>${user.email}</td><td>${user.nombre}</td><td>${user.telefono}</td><td><a href="ver" class="opciones">ver</a></td><td><a href="editar" class="opciones">editar</a></td><td><a href="borrar" class="opciones">borrar</a></td></tr>`);
             HTMLResponse.innerHTML = tpl.join('');
         } else {
             console.error("Error en la solicitud:", this.status, this.statusText);
