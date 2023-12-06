@@ -27,7 +27,7 @@ document.getElementById('buscarForm').addEventListener('submit', function (event
 });
 
 function cancelar() {
-    window.location.href = 'index.html';
+    window.location.href = 'https://contactos-api-frontend-heroku-f3a3001ed46a.herokuapp.com/';
 }
 
 xhr.addEventListener("load", onRequestHandler);
