@@ -3,7 +3,7 @@ const xhr = new XMLHttpRequest();
 
 function buscar() {
     const email = document.getElementById('email').value;
-    xhr.open("GET", `${API_URL}?email=${encodeURIComponent(email)}`);
+    xhr.open("GET", `${API_URL}/contactos?email=${encodeURIComponent(email)}`);
     xhr.send();
 }
 
