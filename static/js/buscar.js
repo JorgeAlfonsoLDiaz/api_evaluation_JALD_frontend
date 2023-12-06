@@ -4,7 +4,7 @@ const xhr = new XMLHttpRequest();
 
 function buscar() {
     const email  = document.getElementById('email').value;
-    xhr.open ("GET", `${API_URL}/${email}`);
+    xhr.open ("GET", `${API_URL}?email=${email}`);
     xhr.send();
 }
 
