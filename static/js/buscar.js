@@ -1,4 +1,4 @@
-const API_URL = "https://contactos-api-backend-heroku-70960492bc44.herokuapp.com/";
+const API_URL = "https://contactos-api-backend-heroku-70960492bc44.herokuapp.com";
 const xhr = new XMLHttpRequest();
 
 function buscar() {
