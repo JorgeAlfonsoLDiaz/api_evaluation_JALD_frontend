@@ -15,6 +15,8 @@ document.getElementById('buscarForm').addEventListener('submit', function (event
 function onRequestHandler() {
     if (this.readyState === 4) {
         if (this.status === 200) {
+            console.log(this.response);
+            
             const data = JSON.parse(this.response);
             const HTMLResponse = document.getElementById("datos");
 
