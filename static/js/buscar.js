@@ -18,11 +18,20 @@ function onRequestHandler() {
             console.log(this.response);
             
             const data_response = JSON.parse(this.response);
-            const data = Array.isArray(data_response) ? data_response : [data_response];
+            const data = Array.isArray(data_response) ? data_response : [data_response];  // Convertir el objeto JSON (aunque sea sólo uno) a un arreglo que se pueda validar
 
             const HTMLResponse = document.getElementById("datos");
 
-            const tpl = data.map((user) => `<tr><td>${user.email}</td><td>${user.nombre}</td><td>${user.telefono}</td><td><a href="ver" class="opciones">ver</a></td><td><a href="editar" class="opciones">editar</a></td><td><a href="borrar" class="opciones">borrar</a></td></tr>`);
+            const tpl = data.map((user) => `
+                <tr>
+                    <td>${user.email}</td>
+                    <td>${user.nombre}</td>
+                    <td>${user.telefono}</td>
+                    <td><a href="ver?email=${encodeURIComponent(user.email)}&nombre=${encodeURIComponent(user.nombre)}&telefono=${encodeURIComponent(user.telefono)}" class="opciones">ver</a></td>
+                    <td><a href="editar" class="opciones">editar</a></td>
+                    <td><a href="borrar" class="opciones">borrar</a></td>
+                </tr>
+            `);
             HTMLResponse.innerHTML = tpl.join('');
         } else {
             console.error("Error en la solicitud:", this.status, this.statusText);
