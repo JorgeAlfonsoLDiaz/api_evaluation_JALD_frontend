@@ -7,6 +7,11 @@ function buscar() {
     xhr.send();
 }
 
+document.getElementById('buscarForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    buscar();
+});
+
 function onRequestHandler() {
     if (this.readyState === 4) {
         if (this.status === 200) {
@@ -21,10 +26,7 @@ function onRequestHandler() {
     }
 }
 
-document.getElementById('buscarForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    buscar();
-});
+
 
 function cancelar() {
     window.location.href = 'https://contactos-api-frontend-heroku-f3a3001ed46a.herokuapp.com/';
