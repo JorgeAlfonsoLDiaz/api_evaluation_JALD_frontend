@@ -21,7 +21,7 @@ function onRequestHandler() {
                 <td>${user.telefono}</td>
                 <td><a href="ver?email=${encodeURIComponent(user.email)}&nombre=${encodeURIComponent(user.nombre)}&telefono=${encodeURIComponent(user.telefono)}" class="opciones">ver</a></td>
                 <td><a href="editar" class="opciones">editar</a></td>
-                <td><a href="borrar" class="opciones">borrar</a></td>
+                <td><a href="borrar?email=${encodeURIComponent(user.email)}&nombre=${encodeURIComponent(user.nombre)}&telefono=${encodeURIComponent(user.telefono)}" class="opciones">borrar</a></td>
             </tr>
         `);
         HTMLResponse.innerHTML = tpl.join(''); // Asigna nuevo contenido en el elemento HTMLResponse
