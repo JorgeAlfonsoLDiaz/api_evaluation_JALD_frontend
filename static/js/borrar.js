@@ -4,7 +4,7 @@ const xhr = new XMLHttpRequest();
 
 function borrar() {
     const emailElement = document.getElementById('email');
-    const email = emailElement.innerText.trim(); // Obtener el email del contenido actual
+    const email = emailElement.textContent.trim(); // Obtener el email del contenido actual
 
     xhr.open("DELETE", `${API_URL}/contactos/${encodeURIComponent(email)}`);
     xhr.send();
