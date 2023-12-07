@@ -16,22 +16,29 @@
         </div>
 
         <div class="center-1">
-            <p>Email: email@email.com</p>
+            <div id="email">
+                
+            </div>
         </div>
         <div class="center-1">
-            <p>Nombre: Example</p>
+            <div id="nombre">
+                
+            </div>
         </div>
         <div class="center-1">
-            <p>Teléfono: 11111111111</p>
-        </div>
+            <div id="telefono"></div>
+                
+            </div>
         <div class="center-1">
-            <form id="borrarForm" action="borrar.php" method="GET">
+            <form id="borrarForm" action="/" method="GET">
                 <div class="center-1">
-                    <button type="button" id="Borrar">Borrar</button>
-                    <button type="button" id="Cancelar">Cancelar</button>
+                    <button type="submit" id="Borrar">Borrar</button>
+                    <button type="button" id="Cancelar" onclick="cancelar()">Cancelar</button>
                 </div>
             </form>
         </div>
     </div>
+    <script src="../static/js/borrar.js" type="module"></script>
+    <script src="../static/js/cancelar.js"></script>
 </body>
 </html>
