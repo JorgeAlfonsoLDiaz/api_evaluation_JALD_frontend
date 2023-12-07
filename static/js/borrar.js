@@ -1,10 +1,7 @@
 const API_URL = "https://contactos-api-backend-heroku-70960492bc44.herokuapp.com";
 const xhr_delete = new XMLHttpRequest();
-const xhr_get = new XMLHttpRequest();
 
-function borrar() {
-    const emailElement = document.getElementById('email');
-    const email = emailElement.textContent.trim(); 
+function borrar(email) {
 
     xhr_delete.open("DELETE", `${API_URL}/contactos/${encodeURIComponent(email)}`);
     xhr_delete.send();
@@ -35,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('Borrar').addEventListener('click', function () {
         if (confirm("¿Borrar Contacto?")) {
-            borrar();
+            borrar(email);
             // window.location.href = '/';  
         }
     });
