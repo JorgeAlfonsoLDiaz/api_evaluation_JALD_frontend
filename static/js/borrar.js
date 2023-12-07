@@ -12,7 +12,7 @@ function borrar() {
 
 
 
-function mostrarDatos(registro) {
+function mostrarDatos(email, nombre, telefono) {
     const emailElement = document.getElementById('email');
     const nombreElement = document.getElementById('nombre');
     const telefonoElement = document.getElementById('telefono');
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nombre = params.get("nombre");
     const telefono = params.get("telefono");
 
-    mostrarDatos(registro);  // Mostrar los datos en borrar.html
+    mostrarDatos(email, nombre, telefono);  // Mostrar los datos en borrar.html
 
     document.getElementById('Borrar').addEventListener('click', function () {
         if (confirm("¿Borrar Contacto?")) {
