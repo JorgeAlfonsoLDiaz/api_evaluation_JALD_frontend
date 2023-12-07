@@ -8,7 +8,6 @@ function borrar(email) {
 }
 
 
-
 function mostrarDatos(email, nombre, telefono) {
     const emailElement = document.getElementById('email');
     const nombreElement = document.getElementById('nombre');
@@ -21,8 +20,8 @@ function mostrarDatos(email, nombre, telefono) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtén el registro de alguna manera (quizás pasarlo como parámetro al script)
     const params = new URLSearchParams(window.location.search);  // Consigue los parámetros que se encuentran en la URL
+    
 
     const email = params.get("email");
     const nombre = params.get("nombre");
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const registro = JSON.parse(xhr_delete.response);
                 mostrarDatos(registro);
 
-                alert(`Registro borrado con éxito. Status code: ${xhr_delete.status}`);
+                alert("Registro borrado con éxito.");
                 
                 window.location.href = '/';
             } else {
