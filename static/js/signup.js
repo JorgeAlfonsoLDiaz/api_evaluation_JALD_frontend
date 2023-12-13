@@ -32,6 +32,3 @@ function registerUser() {
     request.send(JSON.stringify(data));
   }
   
-  function goToLogin() {
-    window.location.href = '/login'; 
-  }
