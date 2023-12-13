@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Contactos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+    <div class="center-content" style="width: 30%;">
+        <div class="center-1">
+            <h1>Registrarse</h1>
+        </div>
+        <div class="center-1">
+            <form id="registrarForm" action="/registrar" method="POST">
+                <div style="margin: 20px;">
+                    <label for="username" style="margin-right: 53px;">Email  </label><input type="email" id="username" name="username" required style="height: 25px; font-size: 20px;">
+                </div>
+                <div style="margin: 20px;"> 
+                    <label for="password">Contraseña  </label><input type="password" id="password" name="password" required style="height: 25px; font-size: 20px;">
+                </div>
+                </div>
+                <div class="center-1">
+                    <button type="submit" id="Insertar">Registrarse</button>
+                    <button type="button" id="Buscar">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../static/js/signup.js"></script>
+</body>
+</html>

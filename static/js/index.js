@@ -1,5 +1,6 @@
 const API_URL = "https://contactos-api-backend-heroku-70960492bc44.herokuapp.com/";
 
+const token = sessionStorage.getItem('token');
 const xhr = new XMLHttpRequest();
 
 
@@ -30,6 +31,8 @@ function onRequestHandler() {
     }
 }
 
+
 xhr.addEventListener("load", onRequestHandler);
 xhr.open("GET", `${API_URL}`);
+xhr.setRequestHeader('Authorization', 'Bearer' + token);
 xhr.send();
