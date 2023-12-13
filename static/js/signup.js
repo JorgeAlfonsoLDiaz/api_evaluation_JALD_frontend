@@ -17,11 +17,11 @@ function registerUser() {
     request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
 
-        alert("Los datos se han insertado correctamente.");
+        alert("Registro exitoso");
         
         window.location.href = '/login';
       } else {
-        console.error("Error al insertar los datos");
+        console.error("Error al registrarse");
       }
     };
   
